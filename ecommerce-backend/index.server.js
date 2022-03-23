@@ -17,18 +17,12 @@ mongoose.connect(
     }
     )
 
-
-
-
-
-
-
-app.get('/', (req, res) => {
-    res.status(200).json({
-        message: 'Are you here to get something?'
-    } 
-    )
-})
+// app.get('/', (req, res) => {
+//     res.status(200).json({
+//         message: 'Are you here to get something?'
+//     } 
+//     )
+// })
 
 //Middleware for parsing the data. 
 app.use(bodyParser.json()); 
