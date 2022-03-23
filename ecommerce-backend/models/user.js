@@ -34,7 +34,7 @@ const userSchema = mongoose.Schema({
         },
         hash_password: {
           type: String,
-        //   required: true,
+          required: true,
         },
         role: {
           type: String,
@@ -46,6 +46,11 @@ const userSchema = mongoose.Schema({
       },
       { timestamps: true }
     );
+
+userSchema.virtual('password')
+.set(function(password){
+    this.hash_password = bcrypt.hashSync(password, 10);
+});
 
     // userSchema.methods = {
     //     authenticate: async function (password) {
