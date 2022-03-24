@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
+
 const userRouter = require('./routes/user')
 
 //Environment variables accessible. 
