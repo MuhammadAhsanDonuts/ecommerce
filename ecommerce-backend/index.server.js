@@ -5,7 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 
-const userRouter = require('./routes/user')
+const userRoute = require('./routes/auth')
+const adminRoute = require('./routes/admin/auth')
 
 //Environment variables accessible. 
 dotenv.config(); 
@@ -26,7 +27,8 @@ mongoose.connect(
 
 //Middleware for parsing the data. 
 app.use(bodyParser.json()); 
-app.use('/api', userRouter)
+app.use('/api', userRoute)
+app.use('/api', adminRoute)
 
 //Server is running here |
 //                       V
